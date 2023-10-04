@@ -1,0 +1,53 @@
+<div class="usager" style="display:none">
+                                                     <fieldset style="width:100%" class="conjoint">
+                                                        <legend><span class="legend-fieldest">Conjoints (s)</span></legend>
+                                                        <div class="row mb-3">
+                                                                <div class="col-md-4">
+                                                                    <label class=" control-label" for="example-chosen">Regime Matrimonial (<font color="red">*</font>)</label>
+                                                                    <select id="regime_matrimonial"  name="regime_matrimonial" data-placeholder="Selectionner le conjoint ..." class="form-control select2 conjoints" style="width: 100%;" required >
+                                                                        <option></option>
+                                                                                <option value="1">Monogamie Communauté universelle</option>
+                                                                                <option value="2">Polygamie Séparation de biens</option>
+                                                                                <option value="3">Monogamie Séparation de biens</option>
+                                                                                <option value="4">Monogamie Biens Communs</option>
+                                                                                                                                          
+                                                                    </select>
+                                                                </div>
+                                                                <div class="col-md-6 mariage" style="display:none">
+                                                                <label class=" control-label" for="example-chosen">Joindre l'acte de mariage (<font color="red">*</font>)</label>
+                                                                <input class="form-control input_file" type="file" id='piece_jointe_1' name="piece_jointe_m" accept=".pdf, .jpeg, .png"   placeholder="Joindre une copie de la pièce" required  onchange="VerifyUploadSizeIsOK('piece_jointe_1');" >  
+                                                                    
+                                                                </div> 
+                                                            </div>
+                                                        <div class="row field_wrapper2">
+                                                            <div class="col-md-9  ">
+                                                                <div class="mb-3">
+                                                                    <select id="conjoints"  name="conjoints[]" data-placeholder="Selectionner votre conjoint ..." class="form-control select2 conjoints" style="width: 100%;" required >
+                                                                        <option></option>
+                                                                            @foreach ($all_usagers as $all_usager )
+                                                                                <option value="{{ $all_usager->id }}">{{ $all_usager->Phone_No_ }}-{{ $all_usager->NomRaisonSociale }}{{ $all_usager->prenom }}</option>
+                                                                            @endforeach                                                                  
+                                                                    </select>
+                                                                </div>
+                                                                <!-- <div class="mb-3 mariage" style="display:none">
+                                                                <label class=" control-label" for="example-chosen">Joindre l'acte de mariage (<font color="red">*</font>)</label>
+                                                                <input class="form-control input_file" type="file" id='piece_jointe_1' name="piece_jointe_m" accept=".pdf, .jpeg, .png"   placeholder="Joindre une copie de la pièce" required  onchange="VerifyUploadSizeIsOK('piece_jointe_1');" >  
+                                                                    
+                                                                </div>                                                                -->
+                                                            </div>
+                                                            
+                                                            <div class="col-lg-2">
+                                                                <div class="mb-"> 
+                                                                    <a href="javascript:void(0);"  class="btn btn-md btn-success add_button2"> <i class="fas fa-plus"></i> </a>
+                                                                </div>
+                                                                <a href="#addusager" style="margin-left: 45px; margin-top:-34px;" id="addusager" data-toggle="modal" class="btn btn-md btn-success titre_de_propriete_edit" > Créé Conjoint </a>
+
+                                                            </div> 
+                                                            <!-- <div class="col-lg-2">
+                                                                <div class="mb-" style="margin-top: 30px;"> 
+                                                                    <a href="javascript:void(0);"  class="btn btn-md btn-success add_button2"> <i class="fas fa-plus"></i> </a>
+                                                                </div>
+                                                            </div>                                                  -->
+                                                        </div>
+                                                     </fieldset> <br><br>
+                                            </div>
